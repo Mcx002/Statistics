@@ -10,7 +10,8 @@
       <div class="header"><h2>Ukuran Statistika</h2></div>
       <div class="body">
         <router-link :to="{name:'UngroupedData'}">Ungrouped Data</router-link><br>
-        <router-link :to="{name:'GroupedData'}">Grouped Data</router-link>
+        <router-link :to="{name:'GroupedData'}">Grouped Data</router-link><br>
+        <router-link :to="{name:'Modus'}">Modus</router-link>
       </div>
     </div>
   </div>

@@ -13,5 +13,10 @@ export default [
         path:'/statistika/ukuran-statistika',
         name:'GroupedData',
         component:() => import('../views/statistika/GroupedData.vue')
+    },
+    {
+        path:'/statistika/modus',
+        name:'Modus',
+        component:() => import('../views/statistika/Modus.vue')
     }
 ]
