@@ -6,7 +6,7 @@
         susunan terendah = [{{this.sortasc.join(", ")}}]<br><br>
         <p>Modus adalah value yang memiliki jumlah terbanyak, cari aja sendiri ya ;v<br> kalo misal 
         {{this.tableFreq[2]!=null?this.tableFreq[2].value:'7'}} frekuensinya terbanyak ya.. berarti 
-        {{this.tableFreq[2]!=null?this.tableFreq[2].value:'7'}}</p>
+        {{this.tableFreq[2]!=null?this.tableFreq[2].value:'7'}}.<br>kalo ada 2 tinggal cari rata" nya. rumus = total/n</p>
         <table v-show="tableFreq.length!=0" class="table" border="1">
             <thead>
                 <tr>

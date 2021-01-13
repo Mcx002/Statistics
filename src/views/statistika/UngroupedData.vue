@@ -4,7 +4,24 @@
         <textarea type="text" v-model="value" cols="100" rows="10" /><br>
         n(jumlah) = {{this.n}}<br><br>
         sum = {{this.sum}}<br><br>
-        rata rata = sum/n = {{this.hitungPopulasi}}
+        rata rata = sum/n = {{this.hitungPopulasi}}<br><br>
+        <p>Modus adalah value yang memiliki jumlah terbanyak, cari aja sendiri ya ;v<br> kalo misal 
+        {{this.tableFreq[2]!=null?this.tableFreq[2].value:'7'}} frekuensinya terbanyak ya.. berarti 
+        {{this.tableFreq[2]!=null?this.tableFreq[2].value:'7'}}.<br>kalo ada 2 tinggal cari rata" nya. rumus = total nilai terbesar yang sama/n</p>
+        <table v-show="tableFreq.length!=0" class="table" border="1">
+            <thead>
+                <tr>
+                    <th>value</th>
+                    <th>Frekuensi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(data,i) in tableFreq" :key="i">
+                    <td>{{data.value}}</td>
+                    <td>{{data.freq}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </template>
 <script>
@@ -21,7 +38,9 @@ export default {
         },
         sortasc(){
             let temp = this.value.split(" ")
-            temp = temp.sort()
+            temp = temp.sort(temp = temp.sort(function(a, b) {
+                return a - b;
+            }))
             return temp
         },
         sum(){
@@ -30,6 +49,33 @@ export default {
         },
         hitungPopulasi(){
             return this.sum/this.n
+        },
+        tableFreq(){
+            let temp = this.sortasc
+            let i, result
+            result = []
+            this.groupBy(temp).forEach((data)=>{
+                let temp_obj = {
+                    value:data,
+                    freq:0
+                }
+                for(i=0;i<temp.length;i++){
+                    if(data==temp[i])
+                        temp_obj.freq++
+                }
+                result.push(temp_obj)
+            })
+            return result
+        }
+    },
+    methods:{
+        groupBy(arr){
+            let i, result;
+            result = []
+            for(i=0; i<arr.length; i++){
+                result[arr[i]] = arr[i]
+            }
+            return result
         }
     }
 }

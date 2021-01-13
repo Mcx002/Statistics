@@ -52,7 +52,9 @@ export default {
         },
         sortasc(){
             let temp = this.value.split(" ")
-            temp = temp.sort()
+            temp = temp.sort(temp = temp.sort(function(a, b) {
+                return a - b;
+            }))
             return temp
         },
         R(){

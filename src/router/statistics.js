@@ -5,18 +5,13 @@ export default [
         component:() => import('../views/statistika/TableFrekuensi.vue')
     },
     {
-        path:'/statistika/ukuran-statistika',
+        path:'/statistika/ungrouped-data',
         name:'UngroupedData',
         component:() => import('../views/statistika/UngroupedData.vue')
     },
     {
-        path:'/statistika/ukuran-statistika',
+        path:'/statistika/grouped-data',
         name:'GroupedData',
         component:() => import('../views/statistika/GroupedData.vue')
-    },
-    {
-        path:'/statistika/modus',
-        name:'Modus',
-        component:() => import('../views/statistika/Modus.vue')
     }
 ]

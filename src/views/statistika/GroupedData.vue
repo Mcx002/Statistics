@@ -7,6 +7,12 @@
         R(rentangan) = terbesar - terkecil = {{this.R}}<br><br>
         K = 1 + 3.3 log(n) = {{this.K}}<br><br>
         P = R/K = {{this.P}}<br><br>
+        <p>untuk mencari modus, rumusnya berikut<br>TBB + R ( d1 / d1 + d2)</p>
+        <p>
+            TBB = tepi batas bawah (20 -> 19.5)<br>
+            d1 = freq kelas modus - freq kelas sebelum modus<br>
+            d2 = freq kelas modus - freq kelas setelah modus
+        </p>
         <table v-show="tableFrekuensi.length!=0" class="table" border="1">
             <thead>
                 <tr>
@@ -54,8 +60,10 @@ export default {
             return temp.length
         },
         sortasc(){
-            let temp = this.value.split(" ")
-            temp = temp.sort()
+            let temp = this.value.split(" ").map(data=>parseInt(data))
+            temp = temp.sort(function(a, b) {
+                return a - b;
+            })
             return temp
         },
         R(){
@@ -120,7 +128,7 @@ export default {
 <style>
     .table{
         border-collapse: collapse;
-        width:400px;
+        width:800px;
     }
     .table td{
         text-align: center; 
