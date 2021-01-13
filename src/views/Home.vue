@@ -13,6 +13,12 @@
         <router-link :to="{name:'GroupedData'}">Grouped Data</router-link><br>
       </div>
     </div>
+    <div>
+      <div class="header"><h2>Distribusi peluang diskrit</h2></div>
+      <div class="body">
+        <router-link :to="{name:'Uniform'}">uniform</router-link><br>
+      </div>
+    </div>
   </div>
 </template>
 
