@@ -1,18 +1,24 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div>
+      <div class="header"><h2>Statistika</h2></div>
+      <div class="body">
+        <router-link :to="{name:'TableFrekuensi'}">Table Frekuensi</router-link>
+      </div>
+    </div>
+    <div>
+      <div class="header"><h2>Ukuran Statistika</h2></div>
+      <div class="body">
+        <router-link :to="{name:'UngroupedData'}">Ungrouped Data</router-link><br>
+        <router-link :to="{name:'GroupedData'}">Grouped Data</router-link>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
+  name: 'Home'
 }
 </script>
